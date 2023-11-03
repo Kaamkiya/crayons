@@ -15,7 +15,7 @@ def fg(color):
     """Set the foreground color for text to be printed in"""
     if color == 'random':
         color = random.choice(ALL_COLORS)
-    
+
     color = {
         'red': '\033[31m',
         'green': '\033[32m',
@@ -43,11 +43,11 @@ def bg(color):
 
 def fg_rgb(r, g, b):
     """Set the foreground color to an RGB value"""
-    print('\033[38;2;%s;%s;%sm' %(r, g, b))
+    print(f'\033[38;2;{r};{g};{b}m')
 
 def bg_rgb(r, g, b):
     """Set the background color to an RGB value"""
-    print('\033[48;2;%s;%s;%sm' %(r, g, b))
+    print('\033[48;2;{r};{g};{b}m')
 
 def effect(ef):
     """Add a text effect, like bold or underline"""
@@ -58,7 +58,7 @@ def effect(ef):
 
 def goto(x, y):
     """Set the cursor position to a point in the terminal"""
-    print('\033[{};{};H'.format(x, y))
+    print(f'\033[{x};{y};H')
 
 def size():
     """Return the size of the terminal in rows and columns"""

@@ -1,7 +1,7 @@
 """Config"""
 
-project = 'crayons'
-copyright = '2023, Kaamkiya'
+PROJECT = 'crayons'
+COPYRIGHT = '2023, Kaamkiya'
 
-version = '0.3.4'
-release = '0.3.4'
+VERSION = '0.3.4'
+RELEASE = '0.3.4'

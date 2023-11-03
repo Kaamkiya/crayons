@@ -2,7 +2,7 @@
 
 import random
 
-from .__init__ import *
+from .__init__ import size, goto, fg_rgb
 
 print('''crayons.py
 v0.3.4
@@ -26,7 +26,7 @@ for i in range(10):
 while True:
     for i, dot in enumerate(dots):
         goto(dot['x'], dot['y'])
-        fg(dot['color'][0], dot['color'][1], dot['color'][2])
+        fg_rgb(*dot['color'])
 
         if dot['x'] > WIDTH:
             dot['xvel'] *= -1
