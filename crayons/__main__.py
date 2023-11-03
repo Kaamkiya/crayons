@@ -1,6 +1,6 @@
 import random
 
-from .__init__ import fg, bg, effects, fg_rgb, bg_rgb
+from .__init__ import fg, bg, effect, fg_rgb, bg_rgb
 
 print('''crayons.py
 v0.3.4
