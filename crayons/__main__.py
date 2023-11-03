@@ -1,17 +1,44 @@
+"""A demo of bouncing dots with color using the module"""
+
 import random
 
-from .__init__ import fg, bg, effect, fg_rgb, bg_rgb
+from .__init__ import *
 
 print('''crayons.py
 v0.3.4
 
-This is a module to print text with color! See the demo below:
-''')
+This is a module to print text with color! See the demo below:''')
+
+WIDTH, HEIGHT = size()
+HEIGHT -= 6
+
+dots = []
 
 for i in range(10):
-    r = random.randint(0, 255)
-    g = random.randint(0, 255)
-    b = random.randint(0, 255)
+    dots.append({
+        'x': random.randint(1, WIDTH),
+        'y': random.randint(5, HEIGHT),
+        'xvel': random.randint(-2, 2),
+        'yvel': random.randint(-2, 2),
+        'color': (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+    })
 
-    fg_rgb(r, g, b)
-    print('R: {}, G: {}, B: {}'.format(r, g, b))
+while True:
+    for i, dot in enumerate(dots):
+        goto(dot['x'], dot['y'])
+        fg(dot['color'][0], dot['color'][1], dot['color'][2])
+
+        if dot['x'] > WIDTH:
+            dot['xvel'] *= -1
+
+        if dot['x'] < 1:
+            dot['xvel'] *= -1
+
+        if dot['y'] > HEIGHT:
+            dot['yvel'] *= -1
+
+        if dot['y'] < 6:
+            dot['yvel'] *= -1
+
+        dot['x'] += dot['xvel']
+        dot['y'] += dot['yvel']
