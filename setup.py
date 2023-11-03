@@ -11,7 +11,7 @@ with open('LICENSE') as f:
 
 setup(
     name='crayons',
-    version='0.1.0',
+    version='0.3.4',
     description='Module to print text with color',
     long_description=readme,
     author='Kaamkiya',
