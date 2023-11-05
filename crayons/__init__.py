@@ -5,6 +5,7 @@ This is a module for special effects in the terminal.
 
 It can change font color, background color, cursor position, and more."""
 
+import os
 import sys
 import shutil
 import random
@@ -58,11 +59,15 @@ def effect(ef):
 
 def goto(x, y):
     """Set the cursor position to a point in the terminal"""
-    print(f'\033[{x};{y};H')
+    print(f'\033[{x};{y};H', end='')
 
 def size():
     """Return the size of the terminal in rows and columns"""
-    return shutil.get_terminal_size()[:]
+    return (shutil.get_terminal_size()[1], shutil.get_terminal_size()[0])
+
+def clear():
+    """Rmove all printed content from the terminal"""
+    os.system('clear')
 
 def reset():
     """Reset all effects"""
