@@ -104,9 +104,7 @@ def highlight(code, colorscheme='atom_one_dark'):
     }
     
     lexeme = ''
-    
-    terminalbg(COLORS[colorscheme]['background'])
-    
+        
     for i, char in enumerate(code):
         lexeme += char
         if lexeme in KEYWORDS:
