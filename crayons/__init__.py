@@ -44,11 +44,11 @@ def bg(color):
 
 def fg_rgb(r, g, b):
     """Set the foreground color to an RGB value"""
-    print(f'\033[38;2;{r};{g};{b}m')
+    print(f'\033[38;2;{r};{g};{b}m', end='')
 
 def bg_rgb(r, g, b):
     """Set the background color to an RGB value"""
-    print(f'\033[48;2;{r};{g};{b}m')
+    print(f'\033[48;2;{r};{g};{b}m', end='')
 
 def effect(ef):
     """Add a text effect, like bold or underline"""
