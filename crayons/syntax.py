@@ -1,6 +1,6 @@
 from keyword import kwlist
 
-from __init__ import *
+from .__init__ import *
 
 def highlight(code, colorscheme='atom_one_dark'):
     BOOLS = (
