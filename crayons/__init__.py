@@ -55,11 +55,11 @@ def fg_rgb(r, g, b):
 
 def fg_hex(hx):
     """Set the output foreground color to a hex code"""
-    print('\033[38;3;{};{};{}m'.format(*_hex_to_rgb(hx)), end='')
+    print('\033[38;2;{};{};{}m'.format(*_hex_to_rgb(hx)), end='')
 
 def bg_hex(hx):
     """Set output background to a hex code"""
-    print('\033[48;3;{};{};{}m'.format(*_hex_to_rgb(hx)), end='')
+    print('\033[48;2;{};{};{}m'.format(*_hex_to_rgb(hx)), end='')
 
 def bg_rgb(r, g, b):
     """Set the background color to an RGB value"""
