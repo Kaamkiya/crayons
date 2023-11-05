@@ -84,6 +84,17 @@ def clear():
     """Rmove all printed content from the terminal"""
     os.system('clear')
 
+def terminalbg(color):
+    if sys.platform == 'linux':
+        os.system(f'setterm --background {color}')
+    elif sys.platform == 'win32':
+        os.system(f'color {color}')
+    else:
+        print('''This has not yet been implemented on your platform. 
+If you would like to implement it, go to 
+https://github.com/Kaamkiya/crayons
+and send a PR''')
+
 def reset():
     """Reset all effects"""
     print('\033[0m', end='')
