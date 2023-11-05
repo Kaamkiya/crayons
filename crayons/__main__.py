@@ -13,7 +13,7 @@ This is a module to make the terminal more fun and interesting.
 Wait two seconds to see the demo!''')
 time.sleep(2)
 
-HEIGHT, WIDTH = size()
+WIDTH, HEIGHT = size()
 
 dots = []
 
