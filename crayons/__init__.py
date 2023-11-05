@@ -12,6 +12,13 @@ import random
 
 ALL_COLORS = ('red', 'green', 'yellow', 'blue', 'purple', 'cyan')
 
+def _hex_to_rgb(hx):
+    hx = hx [1:]
+    rgb = []
+    for i in (0, 2, 4):
+        rgb.append(int(hx[i:i+2], 16))
+    return tuple(rgb)
+
 def fg(color):
     """Set the foreground color for text to be printed in"""
     if color == 'random':
@@ -45,6 +52,12 @@ def bg(color):
 def fg_rgb(r, g, b):
     """Set the foreground color to an RGB value"""
     print(f'\033[38;2;{r};{g};{b}m', end='')
+
+def fg_hex(hx):
+    print('\033[38;3;{};{};{}m'.format(*_hex_to_rgb(hx)), end='')
+
+def bg_hex(hx):
+    print('\033[48;3;{};{};{}m'.format(*_hex_to_rgb(hx)), end='')
 
 def bg_rgb(r, g, b):
     """Set the background color to an RGB value"""
